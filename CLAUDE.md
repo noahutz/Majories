@@ -18,8 +18,8 @@ Then open `http://localhost:8000/index.html`. There is no lint, test, or build c
 
 ## Architecture
 
-- **`index.html`** — the entire site. One page with anchor-linked sections (`#top`, `#menu`, `#story`, `#order`) navigated via the sticky nav in-page; there is no routing or JS.
-- **`css/style.css`** — all styling, organized by section (nav, hero, menu bento, story, order ticket, footer) with a shared design-token block at the top.
+- **`index.html`** — the entire site. One page with anchor-linked sections (`#top`, `#menu`, `#gallery`, `#order`, plus an unlinked `.showcase` section between the hero and menu) navigated via the sticky nav in-page; there is no routing or JS.
+- **`css/style.css`** — all styling, organized by section (nav, hero, showcase, menu, gallery, order ticket, footer) with a shared design-token block at the top.
 - **`assets/`** — logo and product photography referenced directly by `index.html`.
 
 ### Theming
@@ -28,11 +28,14 @@ Colors are defined as CSS custom properties on `:root` in `css/style.css` (cream
 
 ### Layout patterns
 
-- The menu section (`#menu`) uses a 6-column CSS grid (`.bento`) with tiles spanning 2, 3, or 6 columns (`span-2`, `span-3`, `span-6`) to create a bento-box layout; each tile is an image (`.shot`) plus a copy block (`.tile-copy`).
+- The menu section (`#menu`) is grouped into `.menu-category` blocks (e.g. Pastries, Cakes, Gift Ideas), each with a `.category-title` and a `.menu-grid` (3-column CSS grid) of `.dish` cards — a `.dish-shot` image (optionally flagged with a `.dish-badge`, e.g. "Sale") plus `.dish-copy` holding a `.dish-head` (name + price) and `.dish-desc`. A commented template in `index.html` above the first category shows the exact markup to duplicate when adding a menu item.
+- Below the hero, a full-width `.showcase` section shows one photo (`.showcase-frame`) with an italic `.showcase-caption` underneath — it has no nav link or `id`.
+- The `#gallery` section (replaces the old `#story` section) is a horizontally scrollable strip (`.gallery-scroll`, scroll-snap) of `.gallery-shot` images — no captions, just photos.
 - The order section (`#order`) uses a two-column "ticket" (`.ticket`) of `.contact-card`s. The "Text to Order" flow is a `<details>`/`<summary>` element (`.chip-expand`) that expands in place to show ordering steps — no JS needed.
-- Responsive breakpoints are at `860px` (stacks hero/story/ticket to one column, bento to 2 columns) and `480px` (hides one nav link) — see the media queries at the bottom of `css/style.css`.
+- Responsive breakpoints are at `860px` (stacks hero/ticket to one column, `.menu-grid` to 2 columns) and `480px` (hides the `#gallery` nav link, `.menu-grid` to 1 column) — see the media queries at the bottom of `css/style.css`.
 
 ### Content notes
 
 - Business contact info (phone, email, social links, order form, map) lives inline in the `#order` section of `index.html`. Order-flow instructions (text-to-order steps, payment details) are also inline there — update in place if the bakery's process changes.
-- Copy uses HTML entities for typographic characters (`&rsquo;`, `&mdash;`, `&ntilde;`, `&#8209;` for non-breaking hyphen) rather than raw Unicode — follow this convention when editing text.
+- Copy uses HTML entities for typographic characters (`&rsquo;`, `&mdash;`, `&ntilde;`, `&#8209;` for non-breaking hyphen, `&Prime;` for the inch mark after cake sizes) rather than raw Unicode — follow this convention when editing text.
+- Menu prices are HTML entities too (`&#8369;` for the peso sign, e.g. `&#8369;1,150`) — keep new `.dish-price` values in that format.

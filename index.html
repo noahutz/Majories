@@ -19,11 +19,11 @@
     <div class="nav-inner">
       <a href="#top" class="brand">
         <img src="assets/logo.png" alt="M's by Marjorie's" class="mark" />
-        by Marjorie's
+        M&rsquo;s by Marjorie&rsquo;s
       </a>
       <div class="navlinks">
         <a href="#menu">Menu</a>
-        <a href="#story">Story</a>
+        <a href="#gallery">Gallery</a>
         <a href="#order">Order</a>
       </div>
     </div>
@@ -45,11 +45,14 @@
         <div class="frame">
           <img src="assets/products/cake-flight.png" alt="Four M's by Marjorie's cakes displayed together: cashew sansrival, mango cake, carrot cake, and decadent chocolate cake" />
         </div>
-        <div class="hero-tag">
-          <div class="num">4</div>
-          <div class="label">signature cakes, baked from one kitchen</div>
-        </div>
       </div>
+    </section>
+
+    <section class="showcase">
+      <div class="frame showcase-frame">
+        <img src="assets/products/boxes-wide.png" alt="Assorted M's by Marjorie's orders packed and boxed on a table" />
+      </div>
+      <p class="showcase-caption">Every order, boxed by hand and ready for pickup.</p>
     </section>
 
     <section id="menu">
@@ -58,71 +61,164 @@
           <p class="eyebrow">The menu</p>
           <h2>Signature bakes</h2>
         </div>
-        <p>A short, rotating lineup &mdash; cakes finished in&#8209;house, breads proofed the night before, pie baked to order. Message us for current pricing.</p>
+        <p>A short, rotating lineup &mdash; cakes finished in&#8209;house, breads proofed the night before, pie baked to order.</p>
       </div>
 
-      <div class="bento">
-        <div class="tile span-3 tall">
-          <div class="shot"><img src="assets/products/sansrival.png" alt="Sansrival cake coated edge to edge in toasted cashew bits"></div>
-          <div class="tile-copy">
-            <h3>Sansrival</h3>
-            <p class="desc">Buttercream layers, crisp meringue, coated all over in toasted cashews.</p>
+      <!-- ============================================
+           MENU TEMPLATE
+           Each category below holds one placeholder .dish card.
+           To add an item: duplicate a whole <div class="dish">...</div>
+           block within the matching .menu-grid and fill in:
+             - img src/alt  -> the product photo
+             - .dish-name   -> item name
+             - .dish-desc   -> short description
+             - .dish-price  -> price (e.g. &#8369;450)
+           ============================================ -->
+
+      <div class="menu-category">
+        <h3 class="category-title">Pastries</h3>
+        <div class="menu-grid">
+          <div class="dish">
+            <div class="dish-shot">
+              <img src="assets/products/cheese-roll.png" alt="Cheese roll pastry filled with cheese and topped with buttercream and sugar">
+            </div>
+            <div class="dish-copy">
+              <div class="dish-head">
+                <h4 class="dish-name">Cheese Roll</h4>
+                <span class="dish-price">&#8369;75</span>
+              </div>
+              <p class="dish-desc">Our best&#8209;selling pastry, filled with cheese, topped with buttercream, and sprinkled with sugar.</p>
+            </div>
+          </div>
+          <div class="dish">
+            <div class="dish-shot">
+              <img src="assets/products/ensaymada.png" alt="Ensaymada pastry generously topped with cheese">
+            </div>
+            <div class="dish-copy">
+              <div class="dish-head">
+                <h4 class="dish-name">Ensaymada</h4>
+                <span class="dish-price">&#8369;75</span>
+              </div>
+              <p class="dish-desc">Soft, fluffy, and generously topped with cheese &mdash; a less&#8209;sweet pastry.</p>
+            </div>
           </div>
         </div>
+      </div>
 
-        <div class="tile span-3 tall">
-          <div class="shot"><img src="assets/products/carrot-sliced.png" alt="Sliced carrot cake showing two moist layers with cream cheese frosting"></div>
-          <div class="tile-copy">
-            <h3>Carrot Cake</h3>
-            <p class="desc">Walnuts and a touch of pineapple extract folded through, finished with cream&#8209;cheese frosting.</p>
+      <div class="menu-category">
+        <h3 class="category-title">Cakes</h3>
+        <div class="menu-grid">
+          <div class="dish">
+            <div class="dish-shot">
+              <span class="dish-badge">Sale</span>
+              <img src="assets/products/chocolate-cake.png" alt="6-inch decadent chocolate cake">
+            </div>
+            <div class="dish-copy">
+              <div class="dish-head">
+                <h4 class="dish-name">6&Prime; Decadent Chocolate Cake</h4>
+                <span class="dish-price">&#8369;1,050</span>
+              </div>
+              <p class="dish-desc">Our very own decadent chocolate cake &mdash; a must try!</p>
+            </div>
+          </div>
+          <div class="dish">
+            <div class="dish-shot">
+              <img src="assets/products/carrot-sliced.png" alt="2-layer carrot cake with cream cheese filling and frosting, topped with walnuts">
+            </div>
+            <div class="dish-copy">
+              <div class="dish-head">
+                <h4 class="dish-name">2&#8209;Layer Carrot Cake</h4>
+                <span class="dish-price">&#8369;1,150</span>
+              </div>
+              <p class="dish-desc">Indulge in our rich and moist carrot cake layered with luscious cream cheese filling and frosting. Made with real carrots and generously filled and topped with crunchy walnuts, every bite delivers the perfect balance of warm spice, creamy sweetness, and nutty texture.</p>
+            </div>
+          </div>
+          <div class="dish">
+            <div class="dish-shot">
+              <img src="assets/products/sansrival.png" alt="6-inch 2-layer sansrival, cashew filled">
+            </div>
+            <div class="dish-copy">
+              <div class="dish-head">
+                <h4 class="dish-name">6&Prime; 2&#8209;Layer Sansrival</h4>
+                <span class="dish-price">&#8369;1,150</span>
+              </div>
+              <p class="dish-desc">Cashew&#8209;filled and generously covered with cashew nuts, layered with buttercream and meringue.</p>
+            </div>
+          </div>
+          <div class="dish">
+            <div class="dish-shot">
+              <img src="assets/products/apple-pie.png" alt="9-inch special apple pie">
+            </div>
+            <div class="dish-copy">
+              <div class="dish-head">
+                <h4 class="dish-name">9&Prime; Special Apple Pie</h4>
+                <span class="dish-price">&#8369;1,395</span>
+              </div>
+              <p class="dish-desc">Our best&#8209;kept secret &mdash; fresh apples with cinnamon, baked with butter in a crusty pie crust. Perfect for any celebration.</p>
+            </div>
           </div>
         </div>
+      </div>
 
-        <div class="tile span-2">
-          <div class="shot"><img src="assets/products/rolls-cheese.png" alt="Cheese-topped ensaymada rolls packed in a box"></div>
-          <div class="tile-copy">
-            <h3>Cheese Ensaymada</h3>
-            <p class="desc">Soft brioche rolls, buttered and piled high with grated cheese.</p>
+      <div class="menu-category">
+        <h3 class="category-title">Gift Ideas</h3>
+        <div class="menu-grid">
+          <div class="dish">
+            <div class="dish-shot">
+              <img src="assets/products/lengua-de-gato.png" alt="Jar of lengua de gato butter crisps">
+            </div>
+            <div class="dish-copy">
+              <div class="dish-head">
+                <h4 class="dish-name">Lengua de Gato</h4>
+                <span class="dish-price">&#8369;340</span>
+              </div>
+              <p class="dish-desc">Thin butter crisps that melt in your mouth.</p>
+            </div>
           </div>
-        </div>
-
-        <div class="tile span-2">
-          <div class="shot"><img src="assets/products/rolls-plain.png" alt="Soft milk bread rolls packed in a paisley-print box"></div>
-          <div class="tile-copy">
-            <h3>Milk Bread Rolls</h3>
-            <p class="desc">Pillowy, lightly sweet rolls &mdash; good on their own or split for sandwiches.</p>
+          <div class="dish">
+            <div class="dish-shot">
+              <img src="assets/products/barquillos.png" alt="Jar of Special Barquillos wafer rolls by Marjorie's">
+            </div>
+            <div class="dish-copy">
+              <div class="dish-head">
+                <h4 class="dish-name">Special Barquillos</h4>
+                <span class="dish-price">&#8369;340</span>
+              </div>
+              <p class="dish-desc">Thin, crispy wafer rolls &mdash; a must try.</p>
+            </div>
           </div>
-        </div>
-
-        <div class="tile span-2">
-          <div class="shot"><img src="assets/products/apple-pie.png" alt="Apple pie with a golden lattice crust"></div>
-          <div class="tile-copy">
-            <h3>Apple Pie</h3>
-            <p class="desc">Cinnamon&#8209;spiced apples under a hand&#8209;woven lattice, baked until deep gold.</p>
-          </div>
-        </div>
-
-        <div class="tile span-6 wide">
-          <div class="shot"><img src="assets/products/boxes-wide.png" alt="Boxes of ensaymada, milk rolls, and cheese rolls lined up on a table"></div>
-          <div class="tile-copy">
-            <h3>Bakers&rsquo; Basket</h3>
-            <p class="desc">Mix and match milk rolls, cheese ensaymada, and pandesal into one gift box &mdash; a favorite for office orders and pasalubong.</p>
+          <div class="dish">
+            <div class="dish-shot">
+              <img src="assets/products/polvoron-cookies.png" alt="Jar of Polvoron Cookies">
+            </div>
+            <div class="dish-copy">
+              <div class="dish-head">
+                <h4 class="dish-name">Polvoron Cookies</h4>
+                <span class="dish-price">&#8369;340</span>
+              </div>
+              <p class="dish-desc">Like Danish cookies, but better.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="story">
-      <div class="story">
-        <div class="frame">
-          <img src="assets/products/carrot-overhead.png" alt="Overhead view of a carrot cake piped with rosettes, walnuts, and fondant carrots">
-        </div>
+    <section id="gallery">
+      <div class="section-head">
         <div>
-          <p class="eyebrow">Our story</p>
-          <p class="tagline">Small batches, honest ingredients, baked the same way since day one.</p>
-          <p>M&rsquo;s by Marjorie&rsquo;s started out filling small requests from neighbors and coworkers. The recipes haven&rsquo;t changed since &mdash; real butter, toasted nuts, fruit folded in by hand &mdash; only the number of boxes going out the door on a good week.</p>
-          <p>Every cake, loaf, and pie is still made to order in Para&ntilde;aque, ready for pickup or delivery.</p>
+          <p class="eyebrow">Behind the boxes</p>
+          <h2>From our kitchen</h2>
         </div>
+        <p>A closer look at the delightful bakes and treats made fresh in our kitchen.</p>
+      </div>
+      <div class="gallery-scroll">
+        <img src="assets/products/rolls-cheese.png" alt="Box of cheese rolls ready for pickup" class="gallery-shot">
+        <img src="assets/products/rolls-plain.png" alt="Box of plain rolls ready for pickup" class="gallery-shot">
+        <img src="assets/products/ice-cream-bowls.png" alt="Four coconut-shell bowls of ice cream with barquillos, held on a tray" class="gallery-shot">
+        <img src="assets/products/pie-gift-box.png" alt="Apple pie gift box tied with a green ribbon" class="gallery-shot">
+        <img src="assets/products/cheese-roll-plated.png" alt="Cheese roll being enjoyed with coffee, boxed rolls in the background" class="gallery-shot">
+        <img src="assets/products/ensaymada-boxed.png" alt="Boxed ensaymada rolls served with coffee" class="gallery-shot">
+        <img src="assets/products/fruit-nut-loaf.png" alt="Fruit and nut loaf topped with almonds and raisins, whole and sliced" class="gallery-shot">
       </div>
     </section>
 
@@ -199,7 +295,7 @@
 
 
     <footer>
-      <span class="brand"><img src="assets/logo.png" alt="" class="mark small" /> by Marjorie&rsquo;s</span>
+      <span class="brand"><img src="assets/logo.png" alt="" class="mark small" /> M&rsquo;s by Marjorie&rsquo;s</span>
       <span class="fine">Tue&ndash;Sun, 7am&ndash;6pm &middot; Para&ntilde;aque City, Philippines</span>
     </footer>
 
