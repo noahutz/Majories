@@ -50,9 +50,9 @@
 
     <section class="showcase">
       <div class="frame showcase-frame">
-        <img src="assets/products/boxes-wide.png" alt="Assorted M's by Marjorie's orders packed and boxed on a table" />
+        <img src="assets/products/boxes-wide.png" alt="Boxed ensaymada and cheese rolls alongside open boxes of assorted candies and cookies on a wooden table" />
       </div>
-      <p class="showcase-caption">Every order, boxed by hand and ready for pickup.</p>
+      <p class="showcase-caption">Ensaymada, cheese rolls, and our gift boxes &mdash; every order packed by hand.</p>
     </section>
 
     <section id="menu">
@@ -70,9 +70,21 @@
            To add an item: duplicate a whole <div class="dish">...</div>
            block within the matching .menu-grid and fill in:
              - img src/alt  -> the product photo
-             - .dish-name   -> item name
+             - .dish-name   -> item name (no sizes/units in the name)
              - .dish-desc   -> short description
-             - .dish-price  -> price (e.g. &#8369;450)
+             - .dish-price  -> a single price (e.g. &#8369;450), or
+                                "From &#8369;450" when a .dish-variants
+                                list is present (use the lowest price)
+
+           Single-price item: just .dish-price, no .dish-variants needed.
+
+           Item with size/pack variations: add a .dish-variants <dl>
+           after .dish-desc, one <div><dt>label</dt><dd>price</dd></div>
+           per variant, e.g.:
+             <dl class="dish-variants">
+               <div><dt>6&Prime;</dt><dd>&#8369;850</dd></div>
+               <div><dt>8&Prime;</dt><dd>&#8369;1,400</dd></div>
+             </dl>
            ============================================ -->
 
       <div class="menu-category">
@@ -80,14 +92,20 @@
         <div class="menu-grid">
           <div class="dish">
             <div class="dish-shot">
-              <img src="assets/products/cheese-roll.png" alt="Cheese roll pastry filled with cheese and topped with buttercream and sugar">
+              <img src="assets/products/cheese-roll.png" alt="Box of six cheese roll pastries wrapped individually">
             </div>
             <div class="dish-copy">
               <div class="dish-head">
                 <h4 class="dish-name">Cheese Roll</h4>
-                <span class="dish-price">&#8369;75</span>
+                <span class="dish-leader" aria-hidden="true"></span>
+                <span class="dish-price">From &#8369;65</span>
               </div>
               <p class="dish-desc">Our best&#8209;selling pastry, filled with cheese, topped with buttercream, and sprinkled with sugar.</p>
+              <dl class="dish-variants">
+                <div><dt>Per piece</dt><dd>&#8369;65</dd></div>
+                <div><dt>Box of 6</dt><dd>&#8369;300</dd></div>
+                <div><dt>Box of 12</dt><dd>&#8369;550</dd></div>
+              </dl>
             </div>
           </div>
           <div class="dish">
@@ -97,9 +115,15 @@
             <div class="dish-copy">
               <div class="dish-head">
                 <h4 class="dish-name">Ensaymada</h4>
-                <span class="dish-price">&#8369;75</span>
+                <span class="dish-leader" aria-hidden="true"></span>
+                <span class="dish-price">From &#8369;65</span>
               </div>
               <p class="dish-desc">Soft, fluffy, and generously topped with cheese &mdash; a less&#8209;sweet pastry.</p>
+              <dl class="dish-variants">
+                <div><dt>Per piece</dt><dd>&#8369;65</dd></div>
+                <div><dt>Box of 6</dt><dd>&#8369;300</dd></div>
+                <div><dt>Box of 12</dt><dd>&#8369;550</dd></div>
+              </dl>
             </div>
           </div>
         </div>
@@ -114,10 +138,15 @@
             </div>
             <div class="dish-copy">
               <div class="dish-head">
-                <h4 class="dish-name">6&Prime;/8&Prime; Decadent Chocolate Cake</h4>
-                <span class="dish-price">&#8369;850 / &#8369;1,400</span>
+                <h4 class="dish-name">Decadent Chocolate Cake</h4>
+                <span class="dish-leader" aria-hidden="true"></span>
+                <span class="dish-price">From &#8369;850</span>
               </div>
-              <p class="dish-desc">Our very own decadent chocolate cake &mdash; a must try!</p>
+              <p class="dish-desc">Our very own decadent chocolate cake &mdash; a must try! Rich and moist, coated in silky chocolate ganache for pure indulgence in every bite.</p>
+              <dl class="dish-variants dish-variants--wide">
+                <div><dt>6&Prime;</dt><span class="dish-leader" aria-hidden="true"></span><dd>&#8369;850</dd></div>
+                <div><dt>8&Prime;</dt><span class="dish-leader" aria-hidden="true"></span><dd>&#8369;1,400</dd></div>
+              </dl>
             </div>
           </div>
           <div class="dish">
@@ -126,10 +155,15 @@
             </div>
             <div class="dish-copy">
               <div class="dish-head">
-                <h4 class="dish-name">6&Prime;/8&Prime; 2&#8209;Layer Carrot Cake</h4>
-                <span class="dish-price">&#8369;950 / &#8369;1,550</span>
+                <h4 class="dish-name">Carrot Cake</h4>
+                <span class="dish-leader" aria-hidden="true"></span>
+                <span class="dish-price">From &#8369;950</span>
               </div>
-              <p class="dish-desc">Indulge in our rich and moist carrot cake layered with luscious cream cheese filling and frosting. Made with real carrots and generously filled and topped with crunchy walnuts, every bite delivers the perfect balance of warm spice, creamy sweetness, and nutty texture.</p>
+              <p class="dish-desc">Rich, moist carrot cake layered with cream cheese filling and frosting, made with real carrots and crunchy walnuts throughout. Warm spice, creamy sweetness, nutty crunch &mdash; in every bite.</p>
+              <dl class="dish-variants dish-variants--wide">
+                <div><dt>6&Prime;</dt><span class="dish-leader" aria-hidden="true"></span><dd>&#8369;950</dd></div>
+                <div><dt>8&Prime;</dt><span class="dish-leader" aria-hidden="true"></span><dd>&#8369;1,550</dd></div>
+              </dl>
             </div>
           </div>
           <div class="dish">
@@ -138,10 +172,15 @@
             </div>
             <div class="dish-copy">
               <div class="dish-head">
-                <h4 class="dish-name">6&Prime;/8&Prime; 2&#8209;Layer Sansrival</h4>
-                <span class="dish-price">&#8369;850 / &#8369;1,400</span>
+                <h4 class="dish-name">Sansrival</h4>
+                <span class="dish-leader" aria-hidden="true"></span>
+                <span class="dish-price">From &#8369;850</span>
               </div>
               <p class="dish-desc">Cashew&#8209;filled and generously covered with cashew nuts, layered with buttercream and meringue.</p>
+              <dl class="dish-variants dish-variants--wide">
+                <div><dt>6&Prime;</dt><span class="dish-leader" aria-hidden="true"></span><dd>&#8369;850</dd></div>
+                <div><dt>8&Prime;</dt><span class="dish-leader" aria-hidden="true"></span><dd>&#8369;1,400</dd></div>
+              </dl>
             </div>
           </div>
           <div class="dish">
@@ -151,6 +190,7 @@
             <div class="dish-copy">
               <div class="dish-head">
                 <h4 class="dish-name">9&Prime; Special Apple Pie</h4>
+                <span class="dish-leader" aria-hidden="true"></span>
                 <span class="dish-price">&#8369;950</span>
               </div>
               <p class="dish-desc">Our best&#8209;kept secret &mdash; fresh apples with cinnamon, baked with butter in a crusty pie crust. Perfect for any celebration.</p>
@@ -169,6 +209,7 @@
             <div class="dish-copy">
               <div class="dish-head">
                 <h4 class="dish-name">Lengua de Gato</h4>
+                <span class="dish-leader" aria-hidden="true"></span>
                 <span class="dish-price">&#8369;250</span>
               </div>
               <p class="dish-desc">Thin butter crisps that melt in your mouth.</p>
@@ -181,6 +222,7 @@
             <div class="dish-copy">
               <div class="dish-head">
                 <h4 class="dish-name">Special Barquillos</h4>
+                <span class="dish-leader" aria-hidden="true"></span>
                 <span class="dish-price">&#8369;250</span>
               </div>
               <p class="dish-desc">Thin, crispy wafer rolls &mdash; a must try.</p>
@@ -193,7 +235,8 @@
             <div class="dish-copy">
               <div class="dish-head">
                 <h4 class="dish-name">Polvoron Cookies</h4>
-                <span class="dish-price">&#8369;340</span>
+                <span class="dish-leader" aria-hidden="true"></span>
+                <span class="dish-price">&#8369;250</span>
               </div>
               <p class="dish-desc">Like Danish cookies, but better.</p>
             </div>
