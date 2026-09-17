@@ -244,10 +244,11 @@ section{ padding-block:68px; }
 .chip-expand-cta-group{ display:flex; flex-wrap:wrap; gap:4px 18px; margin-top:14px; }
 .chip-expand-cta-group .chip-expand-cta{ margin-top:0; }
 .chip-expand-cta{
-  display:inline-block; margin-top:14px;
+  display:inline-flex; align-items:center; gap:7px; margin-top:14px;
   font-size:13px; font-weight:600; color:var(--gold-deep); text-decoration:none;
 }
 .chip-expand-cta:hover{ text-decoration:underline; }
+.chip-expand-cta svg{ width:17px; height:17px; flex-shrink:0; }
 .order-steps{
   list-style:none; margin:0; padding:0; counter-reset:ostep;
   display:flex; flex-direction:column; gap:12px;
