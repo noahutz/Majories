@@ -134,11 +134,12 @@ nav{
 /* ---- showcase ---- */
 .showcase{ text-align:center; }
 .showcase-frame{
+  max-width:1180px; margin-inline:auto;
   border-radius:20px; overflow:hidden;
   border:1px solid var(--line);
   box-shadow:0 24px 48px -24px var(--shadow);
 }
-.showcase-frame img{ width:100%; aspect-ratio:3/2; object-fit:cover; display:block; }
+.showcase-frame img{ width:100%; aspect-ratio:16/9; object-fit:cover; display:block; }
 .showcase-caption{
   font-family:'Fraunces',serif; font-style:italic; font-weight:500;
   font-size:17px; color:var(--espresso-soft); margin-top:18px;
